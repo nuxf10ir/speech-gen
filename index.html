@@ -37,6 +37,9 @@
 
         .speech-gen .speech-gen__row {
             display: none;
+            opacity: 0;
+            position: relative;
+
         }
 
         .speech-gen .speech-gen__generated-phrase {
@@ -58,6 +61,8 @@
             text-decoration: none;
             color: #ffffff;
         }
+
+
 
     </style>
 </head>
@@ -110,7 +115,7 @@
                        type="radio"
                        name="answer1"
                        id="speech-gen__answer1-4"
-                       data-answer="Премиальный фонд," />
+                       data-answer="Прибыль," />
                 <label for="speech-gen__answer1-4">О прибыли</label>
             </p>
 
@@ -119,7 +124,7 @@
                        type="radio"
                        name="answer1"
                        id="speech-gen__answer1-5"
-                       data-answer="" />
+                       data-answer="Себестоимость" />
                 <label for="speech-gen__answer1-5">О себестоимости</label>
             </p>
 
@@ -204,6 +209,10 @@
 
     ];
 
+    $.fn.fadeInUp = function (obj) {
+        console.log(obj);
+    };
+
     $(document).ready(function () {
 
         var $form = $("#speech-gen__form"),
@@ -216,6 +225,42 @@
         function generateRandomAnswer(answers) {
             var max = answers.length;
             return answers[Math.floor(Math.random() * max)];
+        }
+
+        function animateHideShow(hideObj, showObj) {
+            var $dfd = new $.Deferred(),
+                $promise = $dfd.promise();
+
+            if (hideObj) {
+                hideObj
+                    .animate({
+                        opacity: 0,
+                        top: -20
+                    }, {
+                        duration: 600,
+                        complete: function () {
+                            hideObj.hide();
+                            $dfd.resolve();
+                        }
+                    });
+            } else {
+                $dfd.resolve();
+            }
+
+            $.when($promise).then(function () {
+                showObj.css({
+                    opacity: 0,
+                    top: 20
+                });
+
+                showObj
+                    .show()
+                    .animate({
+                        opacity: 1,
+                        top: 0
+                    }, 600);
+            });
+
         }
 
 
@@ -247,21 +292,20 @@
                 $parent = $thisInput.parents(".speech-gen__row"),
                 $next = $parent.next(".speech-gen__row");
 
+
+
             if ($next.is(":hidden")) {
-                $next.show()
+                animateHideShow($parent, $next);
+
             }
 
         });
 
         $reset.click(function () {
-            $resultPhrase.text("");
-            $rows.filter(":gt(0)").hide();
+            animateHideShow($rows.last(), $rows.eq(0));
         });
 
-        $form
-            .find(".speech-gen__row")
-            .eq(0)
-            .show();
+        animateHideShow(null, $rows.eq(0));
 
 
     });
