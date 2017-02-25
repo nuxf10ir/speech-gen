@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор ответов для финансового директора</title>
+    <style>
+
+        @font-face {
+            font-family: 'KafkaSerifText';
+            src: url('fonts/kafkaseriftext-webfont.eot?#iefix') format('embedded-opentype');
+            src: local('KafkaSerifText'), url('fonts/kafkaseriftext-webfont.woff') format('woff'), url('fonts/kafkaseriftext-webfont.ttf') format('truetype'), url('fonts/kafkaseriftext-webfont.svg#KafkaSerifTextRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'KafkaSerifText';
+            src: url('fonts/kafkaseriftext-black-webfont.eot?#iefix') format('embedded-opentype');
+            src: local('KafkaSerifText Bold'), url('fonts/kafkaseriftext-black-webfont.woff') format('woff'), url('fonts/kafkaseriftext-black-webfont.ttf') format('truetype'), url('fonts/kafkaseriftext-black-webfont.svg#KafkaSerifTextBlack') format('svg');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        .speech-gen .speech-gen__header {
+            font: bold 24px/26px Arial, Helvetica, sans-serif;
+            margin-top: 1.076em;
+            margin-bottom: 0.538em;
+        }
+
+        .speech-gen .speech-gen__note,
+        .speech-gen .speech-gen__question,
+        .speech-gen .speech-gen__result {
+            font: normal 16px/22px "KafkaSerifText", "Times New Roman", Times, serif;
+            margin-bottom: 1em;
+        }
+
+        .speech-gen .speech-gen__row {
+            display: none;
+        }
+
+        .speech-gen .speech-gen__generated-phrase {
+            font-weight: bold;
+        }
+
+        .speech-gen .speech-gen__reset {
+            display: inline-block;
+            background-color: #f1a42e;
+            box-sizing: border-box;
+            padding: 3px 17px;
+            height: 28px;
+            font: normal 13px / 1.53846154 Arial, Helvetica, sans-serif;
+            box-shadow: -1px 1px rgba(0, 0, 0, 0.01), -2px 2px rgba(0, 0, 0, 0.01), -3px 3px rgba(0, 0, 0, 0.01), -4px 4px rgba(0, 0, 0, 0.01), -5px 5px rgba(0, 0, 0, 0.01), -6px 6px rgba(0, 0, 0, 0.01), -7px 7px rgba(0, 0, 0, 0.01), -8px 8px rgba(0, 0, 0, 0.01), -9px 9px rgba(0, 0, 0, 0.01), -10px 10px rgba(0, 0, 0, 0.01), -11px 11px rgba(0, 0, 0, 0.01), -12px 12px rgba(0, 0, 0, 0.01), -13px 13px rgba(0, 0, 0, 0.01), -14px 14px rgba(0, 0, 0, 0.01), -15px 15px rgba(0, 0, 0, 0.01);
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #f1a42e;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+<div class="speech-gen">
+
+    <h2 class="speech-gen__header">
+        Генератор ответов
+    </h2>
+
+    <div class="speech-gen__note">
+        Если вопрос от акционеров на защите годового отчета поставил Вас в тупик, воспользуйтесь универсальным генератором ответов для финансового директора.
+    </div>
+
+    <form class="speech-gen__form" id="speech-gen__form">
+
+        <div class="speech-gen__row">
+
+            <p class="speech-gen__question"><b>Вопрос 1.</b> К ответу на какой вопрос вы хотите подготовиться?</p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer1"
+                       id="speech-gen__answer1-1"
+                       data-answer="Выручка," />
+                <label for="speech-gen__answer1-1">О выручке</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer1"
+                       id="speech-gen__answer1-2"
+                       data-answer="Долговая нагрузка," />
+                <label for="speech-gen__answer1-2">О долговой нагрузке</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer1"
+                       id="speech-gen__answer1-3"
+                       data-answer="Налоговая нагрузка," />
+                <label for="speech-gen__answer1-3">О налоговой нагрузке</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer1"
+                       id="speech-gen__answer1-4"
+                       data-answer="Премиальный фонд," />
+                <label for="speech-gen__answer1-4">О прибыли</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer1"
+                       id="speech-gen__answer1-5"
+                       data-answer="" />
+                <label for="speech-gen__answer1-5">О себестоимости</label>
+            </p>
+
+        </div>
+
+        <div class="speech-gen__row">
+
+            <p class="speech-gen__question"><b>Вопрос 2.</b> Обсуждению чего акционеры уделяют больше времени?</p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer2"
+                       id="speech-gen__answer2-1"
+                       data-answer='["как мы и предполагали,", "как заложили в плане,"]'
+                       data-appendix="true" />
+                <label for="speech-gen__answer2-1">Результатам за год</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer2"
+                       id="speech-gen__answer2-2"
+                       data-answer='["в соответствии со стратегией,", "в соответствии с наметившейся тенденцией,"]'
+                       data-appendix="true" />
+                <label for="speech-gen__answer2-2">Планам на следующий период</label>
+            </p>
+
+        </div>
+
+        <div class="speech-gen__row">
+
+            <p class="speech-gen__question"><b>Вопрос 3.</b> Компания функционирует на конкурентном рынке?</p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer3"
+                       id="speech-gen__answer3-1"
+                       data-answer='["Изучим лучшие практики.", "Будем действовать в зависимости от ситуации на рынке."]' />
+                <label for="speech-gen__answer3-1">Да</label>
+            </p>
+
+            <p class="speech-gen__answer">
+                <input class="speech-gen__radio"
+                       type="radio"
+                       name="answer3"
+                       id="speech-gen__answer3-2"
+                       data-answer='["Будем думать.", "Учтем полученный опыт."]' />
+                <label for="speech-gen__answer3-2">Нет</label>
+            </p>
+
+        </div>
+
+        <div class="speech-gen__row speech-gen__result">
+
+            <p class="speech-gen__phrase">
+                Скажите акционерам &#171;<span id="result-phrase" class="speech-gen__generated-phrase"></span>&#187;
+                Зачастую такие фразы решают ход совещания. Серьезные ответы на вопросы акционеров читайте в статье.
+            </p>
+
+            <button type="reset" id="speech-gen__reset" class="speech-gen__reset">Хочу другой ответ</button>
+
+        </div>
+
+
+    </form>
+
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+    var randomAppendix = [
+        "находится в полной конвергенции.",
+        "четко коррелируется с экономической ситуацией.",
+        "соотносится с общими ожиданиями.",
+        "стабилизировалась благодаря синергетическому эффекту."
+
+    ];
+
+    $(document).ready(function () {
+
+        var $form = $("#speech-gen__form"),
+            $rows = $(".speech-gen__row", $form),
+            $inputs = $(".speech-gen__radio", $form),
+            $resultPhrase = $("#result-phrase", $form),
+            $reset = $("#speech-gen__reset", $form);
+
+
+        function generateRandomAnswer(answers) {
+            var max = answers.length;
+            return answers[Math.floor(Math.random() * max)];
+        }
+
+
+
+        $form.change(function () {
+            var answersArr = [];
+
+            $(".speech-gen__radio:checked").each(function () {
+                var $thisInput = $(this),
+                    dataAnswer = $thisInput.data("answer"),
+                    hasAppendix = $thisInput.data("appendix"),
+                    answer = [];
+
+                answer.push($.isArray(dataAnswer) ? generateRandomAnswer(dataAnswer) : dataAnswer);
+
+                if (hasAppendix) {
+                    answer.push(generateRandomAnswer(randomAppendix))
+                }
+
+                answersArr.push(answer.join(" "));
+            });
+
+            $resultPhrase.text(answersArr.join(" "));
+
+        });
+
+        $inputs.change(function () {
+            var $thisInput = $(this),
+                $parent = $thisInput.parents(".speech-gen__row"),
+                $next = $parent.next(".speech-gen__row");
+
+            if ($next.is(":hidden")) {
+                $next.show()
+            }
+
+        });
+
+        $reset.click(function () {
+            $resultPhrase.text("");
+            $rows.filter(":gt(0)").hide();
+        });
+
+        $form
+            .find(".speech-gen__row")
+            .eq(0)
+            .show();
+
+
+    });
+
+
+</script>
+</body>
+</html>
