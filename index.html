@@ -30,16 +30,46 @@
 
         .speech-gen .speech-gen__note,
         .speech-gen .speech-gen__question,
-        .speech-gen .speech-gen__result {
+        .speech-gen .speech-gen__result,
+        .speech-gen .speech-gen__answer {
             font: normal 16px/22px "KafkaSerifText", "Times New Roman", Times, serif;
+
+        }
+
+        .speech-gen .speech-gen__note,
+        .speech-gen .speech-gen__question,
+        .speech-gen .speech-gen__result {
             margin-bottom: 1em;
         }
+
+        .speech-gen .speech-gen__answer {
+            margin: 0;
+        }
+
 
         .speech-gen .speech-gen__row {
             display: none;
             opacity: 0;
             position: relative;
 
+        }
+
+        .speech-gen .speech-gen__radio {
+            display: none;
+        }
+
+        .speech-gen .speech-gen__label {
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 400px;
+            display: inline-block;
+        }
+
+        .speech-gen .speech-gen__radio:checked + .speech-gen__label,
+        .speech-gen .speech-gen__label:hover {
+            background: #f1a42e;
+            color: #ffffff;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
         }
 
         .speech-gen .speech-gen__generated-phrase {
@@ -88,7 +118,7 @@
                        name="answer1"
                        id="speech-gen__answer1-1"
                        data-answer="Выручка," />
-                <label for="speech-gen__answer1-1">О выручке</label>
+                <label for="speech-gen__answer1-1" class="speech-gen__label">О выручке</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -97,7 +127,7 @@
                        name="answer1"
                        id="speech-gen__answer1-2"
                        data-answer="Долговая нагрузка," />
-                <label for="speech-gen__answer1-2">О долговой нагрузке</label>
+                <label for="speech-gen__answer1-2" class="speech-gen__label">О долговой нагрузке</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -106,7 +136,7 @@
                        name="answer1"
                        id="speech-gen__answer1-3"
                        data-answer="Налоговая нагрузка," />
-                <label for="speech-gen__answer1-3">О налоговой нагрузке</label>
+                <label for="speech-gen__answer1-3" class="speech-gen__label">О налоговой нагрузке</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -115,7 +145,7 @@
                        name="answer1"
                        id="speech-gen__answer1-4"
                        data-answer="Прибыль," />
-                <label for="speech-gen__answer1-4">О прибыли</label>
+                <label for="speech-gen__answer1-4" class="speech-gen__label">О прибыли</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -124,7 +154,7 @@
                        name="answer1"
                        id="speech-gen__answer1-5"
                        data-answer="Себестоимость" />
-                <label for="speech-gen__answer1-5">О себестоимости</label>
+                <label for="speech-gen__answer1-5" class="speech-gen__label">О себестоимости</label>
             </p>
 
         </div>
@@ -140,7 +170,7 @@
                        id="speech-gen__answer2-1"
                        data-answer='["как мы и предполагали,", "как заложили в плане,"]'
                        data-appendix="true" />
-                <label for="speech-gen__answer2-1">Результатам за год</label>
+                <label for="speech-gen__answer2-1" class="speech-gen__label">Результатам за год</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -150,7 +180,7 @@
                        id="speech-gen__answer2-2"
                        data-answer='["в соответствии со стратегией,", "в соответствии с наметившейся тенденцией,"]'
                        data-appendix="true" />
-                <label for="speech-gen__answer2-2">Планам на следующий период</label>
+                <label for="speech-gen__answer2-2" class="speech-gen__label">Планам на следующий период</label>
             </p>
 
         </div>
@@ -165,7 +195,7 @@
                        name="answer3"
                        id="speech-gen__answer3-1"
                        data-answer='["Изучим лучшие практики.", "Будем действовать в зависимости от ситуации на рынке."]' />
-                <label for="speech-gen__answer3-1">Да</label>
+                <label for="speech-gen__answer3-1" class="speech-gen__label">Да</label>
             </p>
 
             <p class="speech-gen__answer">
@@ -174,7 +204,7 @@
                        name="answer3"
                        id="speech-gen__answer3-2"
                        data-answer='["Будем думать.", "Учтем полученный опыт."]' />
-                <label for="speech-gen__answer3-2">Нет</label>
+                <label for="speech-gen__answer3-2" class="speech-gen__label">Нет</label>
             </p>
 
         </div>
