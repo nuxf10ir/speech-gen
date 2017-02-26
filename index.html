@@ -65,6 +65,22 @@
             display: inline-block;
         }
 
+
+        .speech-gen .speech-gen__label:before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            position: relative;
+            vertical-align: text-top;
+            margin: 0 10px 0 0;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGD4D8RkA0aqGfD/P2kOYWQE2c3AAHfBqAHAuBwNxOEQBuRmR4pzIwCWAjQBw+gPWAAAAABJRU5ErkJggg==") no-repeat;
+        }
+
+        .speech-gen .speech-gen__radio:checked + .speech-gen__label:before{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAb0lEQVQ4T2O80ML/n4ECwEg1A/SrP5DkjoutAmD1cBcMHQNATge5liwvwDSRZQCyZlDgYXUBzHno0YGuGa8BIEnkGMGmGacByBLI/sQWxXgDESaJ7hpkrxGMBVzhATOEoAGE0jWGAYQ04JKnODcCAIhkazE1sQboAAAAAElFTkSuQmCC") no-repeat;
+        }
+
         .speech-gen .speech-gen__radio:checked + .speech-gen__label,
         .speech-gen .speech-gen__label:hover {
             background: #f1a42e;
